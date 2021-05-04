@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>greetings exercise</title>
+    <link rel="stylesheet" href="css/skeleton.css">
+    <link rel="stylesheet" href="css/greet.css">
+</head>
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="eight columns box">
+                <div class="form">
+                    <div class="form_container">
+                        <form id="myForm">
+                            <label>name</label>
+                            <input type="text" name="greetInput" required placeholder="name" class="enteredName" id="inputReset" value="">
+                    
+                            <div class="languages clearfix">
+                                <h4>Select Language</h4>
+                                <div class="eachLanguage isiXhosa">
+                                    <label>isiXhosa</label>
+                                    <input type="radio" class="selectLang" name="userLanguage" value="isiXhosa">
+                                </div>
+                                <div class="eachLanguage english">
+                                    <label>English</label>
+                                    <input type="radio" class="selectLang" name="userLanguage" value="English">
+                                </div>
+                                <div class="eachLanguage afrikaans">
+                                    <label>Afrkaans</label>
+                                    <input type="radio" class="selectLang" name="userLanguage" value="Afrikaans">
+                                </div>
+
+                                <span class="outputCounter"></span>
+
+                            </div>
+                            <button class="button-primary greetButton" type="button" name="button">Greet Me</button>
+                        </form>
+                        <div>
+                        <span class="greetAperson"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="four columns box">
+                <h2>html form</h2>
+                <p>
+                    Create a web page that allows you to enter a name and when a button is pressed display a greeting like this : Hello, <THE NAME ENTERED>. After the button is pressed the name should be removed from the text box. Add some basic styling to the page.
+                </p>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="js/factory/greet.js" charset="utf-8"></script>
+    <script src="js/dom/greet.js" charset="utf-8"></script>
+
+</body>
+</html>
