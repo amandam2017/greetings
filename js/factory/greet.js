@@ -1,12 +1,14 @@
-// reference elem
-// set name 
-// getName
 function greet(){
 
     var theName = [];
 
+
     function setName(enterYourName){
-         theName.push(enterYourName)
+        if(!theName.includes(enterYourName)){
+            // console.log(theName);
+            theName.push(enterYourName)
+        }
+        return;
     }
 
     function getName(){
@@ -14,31 +16,76 @@ function greet(){
     }
 
     function greetCounter(){
-        return theName.length;
+        // if(theName != '' || undefined){
+            return theName.length;   
+        // }
+        // console.log(theName)
     }
+
+//local storage
+// function storeNames(){
+//     localStorage.setItem('inputNames', theName)
+// }
      
     // greet a person
     function greetEnteredName(name,language){
-    var checkedRadioBtn = document.querySelector("input[name ='userLanguage']:checked");
-        if(checkedRadioBtn){
-            if(language === 'isiXhosa'){
-                return "Molo, " + name;
+        var greetMe = [];
+
+            if(language  === 'isiXhosa' && name != ''){
+                greetMe += "Molo, " + name;
             }
     
-            if(language === 'English'){
-                return "Hello, " + name;
+            if(language === 'English' && name != ''){
+                greetMe += "Hello, " + name;
             }
     
-            if(language === 'Afrikaans'){
-                return "Hallo, " + name;
+            else if(language === 'Afrikaans' && name != ''){
+                greetMe += "Hallo, " + name;
             }
+
+            return greetMe
+            
+
+    }
+
+    function withRadionCheckedValidation(name, language){
+        console.log(name)
+            
+            var requiredXhosaError = "Faka igama lakho"
+            var requiredEnglishError = "Please eneter in your name"
+            var requiredAfrikaansError = "Tik asseblief jou naam in"
+
+            if (language === 'isiXhosa' && name === '') {
+                return requiredXhosaError
+            }
+
+            else if (language === 'English' && name === '') {
+                return requiredEnglishError
+            }
+
+            else if (language === 'Afrikaans' && name === '') {
+                return requiredAfrikaansError
+            }
+            else{
+                return ''
+            }
+
+    }
+
+    function languagesUnchecked(name,language){
+        if(language === undefined && name != ''){
+            return 'plesae select a language'
         }
     }
+    
 
     return{
         setName,
         getName,
         greetCounter,
-        greetEnteredName
+        greetEnteredName,
+        withRadionCheckedValidation,
+        languagesUnchecked
+        // storeNames
     }
 }

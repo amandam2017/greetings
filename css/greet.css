@@ -32,3 +32,16 @@ span{
     color:green;
     font-size: 30px;
 }
+
+/*************required field****************/
+.none{
+    /* display: none; */
+}
+
+.requiredFieldError{
+    color: #ff0000;
+}
+
+.emptyRadioError{
+    color:yellow;
+}

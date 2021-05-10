@@ -9,8 +9,9 @@ const outputCounterElem = document.querySelector('.outputCounter');
 //reference placeholder of output
 const greetApersonElem = document.querySelector('.greetAperson');
 
-
-
+// reference for requiredField
+const requiredFieldErrorElem = document.querySelector('.requiredFieldError');
+const emptyRadioErrorElem = document.querySelector('.emptyRadioError');
 
 // instance for my factory function
 var bulisa = greet();
@@ -22,19 +23,32 @@ function updateNames() {
 function greetThem() {
     // var outPut = greetApersonElem.value;
 
-    var checkedRadioBtn = document.querySelector("input[name ='userLanguage']:checked");
-    var chooseLanguage = checkedRadioBtn.value;
-
+    var checkedButton = document.querySelector("input[name ='userLanguage']:checked");
+    var chooseLanguage = checkedButton;
     var userName = putNameElem.value;
+
+    
+if (chooseLanguage && userName) {
     bulisa.setName(userName);
 
-    console.log(userName);
+    greetApersonElem.innerHTML =  bulisa.greetEnteredName(userName, chooseLanguage);
+    outputCounterElem.innerHTML =  bulisa.greetCounter();
+    requiredFieldErrorElem.innerHTML = ""
+}  else {
+    requiredFieldErrorElem.innerHTML = bulisa.withRadionCheckedValidation(userName, chooseLanguage);
+    greetApersonElem.innerHTML = ""
+}
 // display the the greeted person
-greetApersonElem.innerHTML =  bulisa.greetEnteredName(userName, chooseLanguage);
+// greetApersonElem.innerHTML =  bulisa.greetEnteredName(userName, chooseLanguage);
     // display the counter
-outputCounterElem.innerHTML =  bulisa.greetCounter();
+// outputCounterElem.innerHTML =  bulisa.greetCounter();
 
-clearInput()
+// display error for required fields
+// requiredFieldErrorElem.innerHTML = bulisa.withRadionCheckedValidation(userName, chooseLanguage);
+emptyRadioErrorElem.innerHTML = bulisa.languagesUnchecked();
+
+
+    clearInput()
 
 }
 
@@ -43,5 +57,8 @@ function clearInput() {
 }
 
 greetButtonElem.addEventListener('click', greetThem);
+// requiredFieldErrorElem.addEventListener('click', bulisa.withRadionCheckedValidation)
+
+//on css hide error messeage and add event on button click to display the error message
 
 

@@ -9,38 +9,38 @@
     <link rel="stylesheet" href="css/greet.css">
 </head>
 <body>
-
     <div class="container">
         <div class="row">
             <div class="eight columns box">
                 <div class="form">
                     <div class="form_container">
                         <form id="myForm">
+                        <p class="requiredFieldError"></p>
                             <label>name</label>
-                            <input type="text" name="greetInput" required placeholder="name" class="enteredName" id="inputReset" value="">
+                            <input type="text" name="greetInput" required placeholder="name" class="enteredName" id="inputReset" value="" [a-zA-Z]+>
                     
                             <div class="languages clearfix">
                                 <h4>Select Language</h4>
                                 <div class="eachLanguage isiXhosa">
                                     <label>isiXhosa</label>
-                                    <input type="radio" class="selectLang" name="userLanguage" value="isiXhosa">
+                                    <input type="radio" class="selectLang" required name="userLanguage" value="isiXhosa">
                                 </div>
                                 <div class="eachLanguage english">
                                     <label>English</label>
-                                    <input type="radio" class="selectLang" name="userLanguage" value="English">
+                                    <input type="radio" class="selectLang" required name="userLanguage" value="English">
                                 </div>
                                 <div class="eachLanguage afrikaans">
                                     <label>Afrkaans</label>
-                                    <input type="radio" class="selectLang" name="userLanguage" value="Afrikaans">
+                                    <input type="radio" class="selectLang" required name="userLanguage" value="Afrikaans">
                                 </div>
 
-                                <span class="outputCounter"></span>
+                                <span class="outputCounter">0</span>
 
                             </div>
-                            <button class="button-primary greetButton" type="button" name="button">Greet Me</button>
+                            <button class="button-primary greetButton" type="button" name="greet">Greet Me</button>
                         </form>
                         <div>
-                        <span class="greetAperson"></span>
+                        <span class="greetAperson none"></span>
                         </div>
                     </div>
                 </div>
