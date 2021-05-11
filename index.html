@@ -11,11 +11,11 @@
 <body>
     <div class="container">
         <div class="row">
-            <div class="eight columns box">
+            <div class="seven columns box">
                 <div class="form">
                     <div class="form_container">
-                        <form id="myForm">
-                        <p class="requiredFieldError"></p>
+                        <form id="form">
+                            
                             <label>name</label>
                             <input type="text" name="greetInput" required placeholder="name" class="enteredName" id="inputReset" value="" [a-zA-Z]+>
                     
@@ -40,13 +40,21 @@
                             <button class="button-primary greetButton" type="button" name="greet">Greet Me</button>
                         </form>
                         <div>
-                        <span class="greetAperson none"></span>
+                        <span class="greetAperson"></span>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="four columns box">
-                <h2>html form</h2>
+            <div class="two columns box">
+                <div class="display--errors">
+                    <p class="requiredFieldError"></p>
+                    <h5 class="emptyRadioError"></h5>
+
+
+                </div>
+            </div>
+            <div class="three columns box">
+                <h2>html form UPDATED</h2>
                 <p>
                     Create a web page that allows you to enter a name and when a button is pressed display a greeting like this : Hello, <THE NAME ENTERED>. After the button is pressed the name should be removed from the text box. Add some basic styling to the page.
                 </p>

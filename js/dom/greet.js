@@ -20,11 +20,19 @@ function updateNames() {
    // bulisa.getName();
 }
 
+var chooseLanguage = "";
+
 function greetThem() {
-    // var outPut = greetApersonElem.value;
 
     var checkedButton = document.querySelector("input[name ='userLanguage']:checked");
-    var chooseLanguage = checkedButton;
+
+    // var unchecked = chooseLanguage
+
+    if(checkedButton){
+     chooseLanguage = checkedButton.value;
+        
+    }
+
     var userName = putNameElem.value;
 
     
@@ -34,31 +42,31 @@ if (chooseLanguage && userName) {
     greetApersonElem.innerHTML =  bulisa.greetEnteredName(userName, chooseLanguage);
     outputCounterElem.innerHTML =  bulisa.greetCounter();
     requiredFieldErrorElem.innerHTML = ""
-}  else {
+    emptyRadioErrorElem.innerHTML = ""
+
+} 
+  else if(chooseLanguage && userName === '' || userName === undefined){
     requiredFieldErrorElem.innerHTML = bulisa.withRadionCheckedValidation(userName, chooseLanguage);
     greetApersonElem.innerHTML = ""
+    
 }
-// display the the greeted person
-// greetApersonElem.innerHTML =  bulisa.greetEnteredName(userName, chooseLanguage);
-    // display the counter
-// outputCounterElem.innerHTML =  bulisa.greetCounter();
 
-// display error for required fields
-// requiredFieldErrorElem.innerHTML = bulisa.withRadionCheckedValidation(userName, chooseLanguage);
-emptyRadioErrorElem.innerHTML = bulisa.languagesUnchecked();
+else {
+    emptyRadioErrorElem.innerHTML = bulisa.validateEmptyForm(userName, chooseLanguage)
+    greetApersonElem.innerHTML = ""
+    requiredFieldErrorElem.innerHTML = ""
 
+}
 
     clearInput()
 
 }
 
 function clearInput() { 
-    document.getElementById("myForm").reset(); 
+    document.getElementById("form").reset(); 
 }
 
 greetButtonElem.addEventListener('click', greetThem);
-// requiredFieldErrorElem.addEventListener('click', bulisa.withRadionCheckedValidation)
 
-//on css hide error messeage and add event on button click to display the error message
 
 

@@ -23,9 +23,9 @@ function greet(){
     }
 
 //local storage
-// function storeNames(){
-//     localStorage.setItem('inputNames', theName)
-// }
+function storeNames(){
+    localStorage.setItem('inputNames', theName)
+}
      
     // greet a person
     function greetEnteredName(name,language){
@@ -72,10 +72,28 @@ function greet(){
 
     }
 
-    function languagesUnchecked(name,language){
-        if(language === undefined && name != ''){
-            return 'plesae select a language'
-        }
+    function validateEmptyForm(name, language){
+        console.log(name)
+            
+            var noName = "please enter your name"
+            var noLanguage = "Please select a language"
+            var noSelection = "please enter your name and select a language"
+
+            if (name === '' || name === undefined && language === '') {
+                return noSelection
+            }
+
+            else if (language === '' && name !== '' || name !== undefined) {
+                return noLanguage
+            }
+
+            else if (language !== '' && name === '' || name === undefined) {
+                return noName
+            }
+            else{
+                return ''
+            }
+
     }
     
 
@@ -85,7 +103,8 @@ function greet(){
         greetCounter,
         greetEnteredName,
         withRadionCheckedValidation,
-        languagesUnchecked
-        // storeNames
+        validateEmptyForm,
+        // languagesUnchecked
+        storeNames
     }
 }
