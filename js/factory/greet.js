@@ -2,7 +2,6 @@ function greet(){
 
     var theName = [];
 
-
     function setName(enterYourName){
         if(!theName.includes(enterYourName)){
             // console.log(theName);
@@ -16,16 +15,9 @@ function greet(){
     }
 
     function greetCounter(){
-        // if(theName != '' || undefined){
-            return theName.length;   
-        // }
-        // console.log(theName)
+        return theName.length;   
     }
 
-//local storage
-function storeNames(){
-    localStorage.setItem('inputNames', theName)
-}
      
     // greet a person
     function greetEnteredName(name,language){
@@ -51,9 +43,9 @@ function storeNames(){
     function withRadionCheckedValidation(name, language){
         console.log(name)
             
-            var requiredXhosaError = "Faka igama lakho"
-            var requiredEnglishError = "Please eneter in your name"
-            var requiredAfrikaansError = "Tik asseblief jou naam in"
+            var requiredXhosaError = "**Faka igama lakho**"
+            var requiredEnglishError = "**Please eneter in your name**"
+            var requiredAfrikaansError = "**Tik asseblief jou naam in**"
 
             if (language === 'isiXhosa' && name === '') {
                 return requiredXhosaError
@@ -75,9 +67,9 @@ function storeNames(){
     function validateEmptyForm(name, language){
         console.log(name)
             
-            var noName = "please enter your name"
-            var noLanguage = "Please select a language"
-            var noSelection = "please enter your name and select a language"
+            var noName = "*please enter your name*"
+            var noLanguage = "*Please select a language*"
+            var noSelection = "*please enter your name and select a language*"
 
             if (name === '' || name === undefined && language === '') {
                 return noSelection
@@ -95,7 +87,7 @@ function storeNames(){
             }
 
     }
-    
+
 
     return{
         setName,
@@ -104,7 +96,6 @@ function storeNames(){
         greetEnteredName,
         withRadionCheckedValidation,
         validateEmptyForm,
-        // languagesUnchecked
-        storeNames
+        // storeNames
     }
 }

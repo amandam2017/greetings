@@ -11,13 +11,21 @@
 <body>
     <div class="container">
         <div class="row">
-            <div class="seven columns box">
+            <div class="eight columns box">
                 <div class="form">
                     <div class="form_container">
-                        <form id="form">
+                        <form id="myform">
+                            <div class="display--errors">
+                                <p class="requiredFieldError"></p>
+                                <h5 class="emptyRadioError"></h5>
+            
+            
+                            </div>
                             
                             <label>name</label>
-                            <input type="text" name="greetInput" required placeholder="name" class="enteredName" id="inputReset" value="" [a-zA-Z]+>
+                            <input type="text" name="greetInput" required placeholder="name" class="enteredName" id="inputReset" value="">
+
+                            <!-- <input type="text" name="greetInput" required placeholder="name" class="enteredName" id="inputReset" value="" onkeypress="lettersOnly(this)"> -->
                     
                             <div class="languages clearfix">
                                 <h4>Select Language</h4>
@@ -38,6 +46,8 @@
 
                             </div>
                             <button class="button-primary greetButton" type="button" name="greet">Greet Me</button>
+                            <!-- <button class="button-primary greetButton" type="button" name="reset">RESET</button> -->
+
                         </form>
                         <div>
                         <span class="greetAperson"></span>
@@ -45,15 +55,7 @@
                     </div>
                 </div>
             </div>
-            <div class="two columns box">
-                <div class="display--errors">
-                    <p class="requiredFieldError"></p>
-                    <h5 class="emptyRadioError"></h5>
-
-
-                </div>
-            </div>
-            <div class="three columns box">
+            <div class="four columns box">
                 <h2>html form UPDATED</h2>
                 <p>
                     Create a web page that allows you to enter a name and when a button is pressed display a greeting like this : Hello, <THE NAME ENTERED>. After the button is pressed the name should be removed from the text box. Add some basic styling to the page.

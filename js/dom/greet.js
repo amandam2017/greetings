@@ -20,13 +20,20 @@ function updateNames() {
    // bulisa.getName();
 }
 
+var greetedNames = [];
+
+if(localStorage['name']){
+    greetedNames = JSON.parse(localStorage.getItem('name'))
+}
+
+
 var chooseLanguage = "";
 
 function greetThem() {
 
     var checkedButton = document.querySelector("input[name ='userLanguage']:checked");
 
-    // var unchecked = chooseLanguage
+    var unchecked = chooseLanguage
 
     if(checkedButton){
      chooseLanguage = checkedButton.value;
@@ -34,6 +41,7 @@ function greetThem() {
     }
 
     var userName = putNameElem.value;
+    // var userName = userName[0].toUpperCase() + userName.slice(1)
 
     
 if (chooseLanguage && userName) {
@@ -58,13 +66,33 @@ else {
 
 }
 
-    clearInput()
+//set the local storage 
+localStorage.setItem('name', greetedNames)
+    clearInput();
+
+    // lettersOnly()
+    // storeNames()
 
 }
+
+//local storage
+// function storeNames(){
+//     var greetedNames = theName
+//     localStorage.setItem('inputNames', theName)
+// }
+
 
 function clearInput() { 
-    document.getElementById("form").reset(); 
+    document.getElementById("myform").reset(); 
 }
+
+setTimeout(function () {requiredFieldErrorElem.innerHTML = "" }, 5)
+
+
+// function lettersOnly(input){
+//     var regex = /[^a-z]/gi;
+//     input.value = input.value.replace(regex, "")
+// }
 
 greetButtonElem.addEventListener('click', greetThem);
 

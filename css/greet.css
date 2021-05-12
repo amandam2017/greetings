@@ -38,10 +38,8 @@ span{
     /* display: none; */
 }
 
-.requiredFieldError{
+.requiredFieldError,
+.emptyRadioError{
     color: #ff0000;
 }
 
-.emptyRadioError{
-    color:yellow;
-}
