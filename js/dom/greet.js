@@ -13,15 +13,19 @@ const greetApersonElem = document.querySelector('.greetAperson');
 const requiredFieldErrorElem = document.querySelector('.requiredFieldError');
 const emptyRadioErrorElem = document.querySelector('.emptyRadioError');
 
-// instance for my factory function
-var bulisa = greet(greetedNames);
-
-var greetedNames;
+var greetedNames = []
 
 if(localStorage['nameList']){
     //if theres a name on local storage 
     greetedNames = JSON.parse(localStorage.getItem('nameList'))
 }
+
+// instance for my factory function and it takes data from the local storage
+var bulisa = greet(greetedNames);
+
+
+outputCounterElem.innerHTML =  bulisa.greetCounter();
+
 
 var chooseLanguage = "";
 
@@ -62,7 +66,7 @@ else {
 
 }
 
-outputCounterElem.innerHTML =  bulisa.greetCounter();
+// outputCounterElem.innerHTML =  bulisa.greetCounter();
 
 
 //set the local storage 
@@ -75,9 +79,6 @@ outputCounterElem.innerHTML =  bulisa.greetCounter();
     // storeNames()
 
 }
-
-outputCounterElem.innerHTML =  bulisa.greetCounter();
-
 
 function clearInput() { 
     document.getElementById("myform").reset(); 

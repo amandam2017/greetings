@@ -1,12 +1,13 @@
-function greet(names){
+function greet(localData){
 
-
-    var theName = [] || names;
+    var theName = localData || []
     
-
     function setName(enterYourName){
         enterYourName = enterYourName.toUpperCase()
-        // enterYourName = enterYourName[0].toUpperCase() + enterYourName.slice(1)
+
+        if(enterYourName != '' || undefined){
+            enterYourName = enterYourName[0].toUpperCase() + enterYourName.slice(1)
+        }
 
         if(!theName.includes(enterYourName)){
             
@@ -46,7 +47,7 @@ function greet(names){
     }
 
     function withRadionCheckedValidation(name, language){
-        console.log(name)
+        // console.log(name)
             
             var requiredXhosaError = "**Faka igama lakho**"
             var requiredEnglishError = "**Please enter in your name**"
@@ -70,7 +71,7 @@ function greet(names){
     }
 
     function validateEmptyForm(name, language){
-        console.log(name)
+        // console.log(name)
             
             var noName = "*please enter your name*"
             var noLanguage = "*Please select a language*"
