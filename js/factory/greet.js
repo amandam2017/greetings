@@ -1,10 +1,15 @@
-function greet(){
+function greet(names){
 
-    var theName = [];
+
+    var theName = [] || names;
+    
 
     function setName(enterYourName){
+        enterYourName = enterYourName.toUpperCase()
+        // enterYourName = enterYourName[0].toUpperCase() + enterYourName.slice(1)
+
         if(!theName.includes(enterYourName)){
-            // console.log(theName);
+            
             theName.push(enterYourName)
         }
         return;
@@ -44,7 +49,7 @@ function greet(){
         console.log(name)
             
             var requiredXhosaError = "**Faka igama lakho**"
-            var requiredEnglishError = "**Please eneter in your name**"
+            var requiredEnglishError = "**Please enter in your name**"
             var requiredAfrikaansError = "**Tik asseblief jou naam in**"
 
             if (language === 'isiXhosa' && name === '') {
@@ -95,7 +100,6 @@ function greet(){
         greetCounter,
         greetEnteredName,
         withRadionCheckedValidation,
-        validateEmptyForm,
-        // storeNames
+        validateEmptyForm
     }
 }

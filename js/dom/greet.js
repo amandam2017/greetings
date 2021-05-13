@@ -14,18 +14,14 @@ const requiredFieldErrorElem = document.querySelector('.requiredFieldError');
 const emptyRadioErrorElem = document.querySelector('.emptyRadioError');
 
 // instance for my factory function
-var bulisa = greet();
+var bulisa = greet(greetedNames);
 
-function updateNames() {
-   // bulisa.getName();
+var greetedNames;
+
+if(localStorage['nameList']){
+    //if theres a name on local storage 
+    greetedNames = JSON.parse(localStorage.getItem('nameList'))
 }
-
-var greetedNames = [];
-
-if(localStorage['name']){
-    greetedNames = JSON.parse(localStorage.getItem('name'))
-}
-
 
 var chooseLanguage = "";
 
@@ -66,28 +62,26 @@ else {
 
 }
 
+outputCounterElem.innerHTML =  bulisa.greetCounter();
+
+
 //set the local storage 
-localStorage.setItem('name', greetedNames)
+ let key = bulisa.getName();
+ localStorage.setItem('nameList', JSON.stringify(key))
+
     clearInput();
 
-    // lettersOnly()
+    // lettersOnly();
     // storeNames()
 
 }
 
-//local storage
-// function storeNames(){
-//     var greetedNames = theName
-//     localStorage.setItem('inputNames', theName)
-// }
+outputCounterElem.innerHTML =  bulisa.greetCounter();
 
 
 function clearInput() { 
     document.getElementById("myform").reset(); 
 }
-
-setTimeout(function () {requiredFieldErrorElem.innerHTML = "" }, 5)
-
 
 // function lettersOnly(input){
 //     var regex = /[^a-z]/gi;

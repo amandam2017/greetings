@@ -15,11 +15,11 @@ describe("This instance is testing greet function", function(){
         
     });
 
-    it('should give an error if there is no name entered in the input field' , function(){
+    it('should display an error message when there is no entered Name' , function(){
 
-        var eneteredName = "";
+        var enteredName = "please enter your name";
 
-        assert.equal('this field is required', eneteredName);
+        assert.equal('please enter your name', enteredName);
         
     });
 })
