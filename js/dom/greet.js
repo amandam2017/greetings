@@ -12,6 +12,7 @@ const greetApersonElem = document.querySelector('.greetAperson');
 // reference for requiredField
 const requiredFieldErrorElem = document.querySelector('.requiredFieldError');
 const emptyRadioErrorElem = document.querySelector('.emptyRadioError');
+const notAlphaElem = document.querySelector('.noLetters')
 // reference of the clear button
 const resetBtn = document.querySelector('.clear');
 // view local storage

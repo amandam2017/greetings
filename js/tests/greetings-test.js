@@ -30,24 +30,23 @@ describe("This instance is testing greet function....when greeting a person in a
     it('should display error messages saysing "plaese enter a name and select a language if no name entered and no language selected"' , function(){
 
         var bulisa = greet()
+        var userName = ''
 
-        bulisa.greetThem()
-        bulisa.greetThem()
-        bulisa.greetThem()
-
-        assert.equal('plaese enter a name and select a language', bulisa.validateEmptyForm())
-
+        bulisa.setName(userName);
         
+        assert.equal('', bulisa.getName())        
     });
 
     it('should show that counter does not increament if a person is greeted for the second time' , function(){
 
-        var bulisa = greet(greetedNames)
-        bulisa.greetCounter()
+        var bulisa = greet()
+        var name1 = ['amanda']
+        var name2 = ['AMANDA']
+        var name3 = ['Amanda']
 
-        bulisa.greetThem()
-        bulisa.greetThem()
-        bulisa.greetThem()
+        bulisa.setName(name1);
+        bulisa.setName(name2);
+        bulisa.setName(name3);
 
         assert.equal(1, bulisa.greetCounter())
 
