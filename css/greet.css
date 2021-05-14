@@ -38,6 +38,7 @@ span{
 .requiredFieldError,
 .emptyRadioError{
     color: #ff0000;
+    font-size:17px;
 }
 
 @media (max-width: 768px) {

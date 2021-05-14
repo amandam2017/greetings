@@ -21,7 +21,8 @@
                             </div>
                             
                             <label>name</label>
-                            <!-- <input type="text" name="greetInput" required placeholder="name" class="enteredName" id="inputReset" value=""> -->
+                            <!-- <input type="text" name="greetInput" required placeholder="name" class="enteredName" id="inputReset" value="" onkeypress= "return (event.charCode > 64 && 
+                            event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)"> -->
 
                             <input type="text" name="greetInput" required placeholder="name" class="enteredName" id="inputReset" value="" onkeypress="lettersOnly(this)">
                     

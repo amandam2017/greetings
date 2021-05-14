@@ -43,15 +43,15 @@ describe("This instance is testing greet function....when greeting a person in a
         
     });
 
-    // it('should display the list of the greeted names on local storage' , function(){
+    it('should display the list of the greeted names on local storage' , function(){
 
-    //     var bulisa = greet(greetedNames)
-    //     var names = 'Amanda' 
+        var bulisa = greet(greetedNames);
+        var names = greetedNames; 
 
-    //     bulisa.setName('H, ' + names)     
-    //     assert.equal('MOLO, YOLIE', bulisa.getName());
+        bulisa.setName(names)     
+        assert.equal('YOLIE', bulisa.getName());
         
-    // });
+    });
 
 
 })

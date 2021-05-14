@@ -107,8 +107,14 @@ function viewStorage(){
 
 
 function lettersOnly(input){
-    var restrictLetters = /[^A-Za-z]/;
-    input.value = input.value.replace(restrictLetters, "")
+    var pattern = /[^A-Za-z]+$/;
+    var noLetterError = 'letters only'
+    if(input.value = input.value.replace(pattern, "")){
+        return true
+    }else{
+        alert(noLetterError)
+        return false;
+    }
 }
 
 resetBtn.addEventListener('click',resetFun )
