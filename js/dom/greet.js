@@ -78,14 +78,12 @@ else {
 
     clearInput();
 
-    lettersOnly();
+    // lettersOnly();
     // storeNames()
 
 }
 
-function clearInput() { 
-  
-  
+function clearInput() {  
     document.getElementById("myform").reset(); 
 }
 
@@ -95,7 +93,8 @@ localStorage.clear()
 location.reload()
 }
 
-function viewStorage(){
+function viewStorage(storageData){
+    console.log(storageData)
     var storageData;
     document.getElementById("showStorage").innerHTML = "";
 
@@ -106,16 +105,16 @@ function viewStorage(){
 }
 
 
-function lettersOnly(input){
-    var pattern = /[^A-Za-z]+$/;
-    var noLetterError = 'letters only'
-    if(input.value = input.value.replace(pattern, "")){
-        return true
-    }else{
-        alert(noLetterError)
-        return false;
-    }
-}
+// function lettersOnly(input){
+//     var pattern = /^[A-Za-z]+$/;
+//     var noLetterError = 'letters only'
+//     if(patternn.test(value) = input.value.replace(pattern, "")){
+//         return true
+//     }else{
+//         alert(noLetterError)
+//         return false;
+//     }
+// }
 
 resetBtn.addEventListener('click',resetFun )
 viewBtn.addEventListener('click', viewStorage )

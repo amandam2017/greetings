@@ -20,10 +20,15 @@ function greet(localData){
         return theName.length;   
     }
 
+    var pattern = /^[A-Za-z]+$/;
+    var noLetterError = 'letters only'
      
     // greet a person
     function greetEnteredName(name,language){
         var greetMe = [];
+        if(pattern.test(name)){
+
+        
 
             if(language  === 'isiXhosa' && name != ''){
                 greetMe += "Molo, " + name;
@@ -38,6 +43,12 @@ function greet(localData){
             }
 
             return greetMe
+
+        }
+        
+        else{
+            return noLetterError
+        }
             
 
     }

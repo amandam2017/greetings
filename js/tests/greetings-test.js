@@ -27,12 +27,23 @@ describe("This instance is testing greet function....when greeting a person in a
         
     });
 
-    it('should display the counter of the greeted names' , function(){
+    it('should display error messages saysing "plaese enter a name and select a language if no name entered and no language selected"' , function(){
+
+        var bulisa = greet()
+
+        bulisa.greetThem()
+        bulisa.greetThem()
+        bulisa.greetThem()
+
+        assert.equal('plaese enter a name and select a language', bulisa.validateEmptyForm())
+
+        
+    });
+
+    it('should show that counter does not increament if a person is greeted for the second time' , function(){
 
         var bulisa = greet(greetedNames)
         bulisa.greetCounter()
-    
-        assert.equal(1, bulisa.greetCounter());
 
         bulisa.greetThem()
         bulisa.greetThem()
@@ -40,16 +51,6 @@ describe("This instance is testing greet function....when greeting a person in a
 
         assert.equal(1, bulisa.greetCounter())
 
-        
-    });
-
-    it('should display the list of the greeted names on local storage' , function(){
-
-        var bulisa = greet(greetedNames);
-        var names = greetedNames; 
-
-        bulisa.setName(names)     
-        assert.equal('YOLIE', bulisa.getName());
         
     });
 
