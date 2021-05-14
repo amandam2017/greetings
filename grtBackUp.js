@@ -1,102 +1,92 @@
-function greet(){
+// reference the elements
+const selectedLangElem = document.querySelector('.selectedLang');
+// setName element
+const putNameElem = document.querySelector('.enteredName');
+// reference the button
+const greetButtonElem = document.querySelector('.greetButton');
+// reference outputCounter
+const outputCounterElem = document.querySelector('.outputCounter');
+//reference placeholder of output
+const greetApersonElem = document.querySelector('.greetAperson');
 
-    var theName = [];
+// reference for requiredField
+const requiredFieldErrorElem = document.querySelector('.requiredFieldError');
+const emptyRadioErrorElem = document.querySelector('.emptyRadioError');
 
+var greetedNames = []
 
-    function setName(enterYourName){
-        if(!theName.includes(enterYourName)){
-            console.log(theName);
-            theName.push(enterYourName)
-        }
-    }
-
-    function getName(){
-        return theName;
-    }
-
-    function greetCounter(){
-        console.log(theName)
-        return theName.length;   
-    }
-
-    function setName(enterYourName){
-        theName.push(enterYourName)
-    }
-
-
-//local storage
-function storeNames(){
-    localStorage.setItem('inputNames', theName)
+if(localStorage['nameList']){
+    //if theres a name on local storage 
+    greetedNames = JSON.parse(localStorage.getItem('nameList'))
 }
-     
-    // greet a person
-    function greetEnteredName(userInput,language){
-        var name = userInput;
-        // var name = userInput[0].toUpperCase() + userInput.slice(1);
-        var checkedRadioBtn = document.querySelector("input[name ='userLanguage']:checked");
+
+// instance for my factory function and it takes data from the local storage
+var bulisa = greet(greetedNames);
+
+
+outputCounterElem.innerHTML =  bulisa.greetCounter();
+
+
+var chooseLanguage = "";
+
+function greetThem() {
+
+    var checkedButton = document.querySelector("input[name ='userLanguage']:checked");
+
+    var unchecked = chooseLanguage
+
+    if(checkedButton){
+     chooseLanguage = checkedButton.value;
         
-        if(checkedRadioBtn){
-
-            if(language === 'isiXhosa'){
-                return "Molo, " + name;
-            }
-    
-            if(language === 'English'){
-                return "Hello, " + name;
-            }
-    
-            else if(language === 'Afrikaans'){
-                return "Hallo, " + name;
-            }
-            
-        }
-
     }
 
-    function withRadionCheckedValidation(name, language){
-        var checkedRadioBtn = document.querySelector("input[name ='userLanguage']:checked");
-        if(checkedRadioBtn){
-            
-            var requiredXhosaError = "Faka igama lakho"
-            var requiredEnglishError = "Please eneter in your name"
-            var requiredAfrikaansError = "Tik asseblief jou naam in"
-
-            if (language === 'isiXhosa' && name === '' || name === undefined) {
-                return requiredXhosaError
-            }
-
-            if (language === 'English' && name === '' || name === undefined) {
-                return requiredEnglishError
-            }
-
-            if (language === 'Afrikaans' && name === '' || name === undefined) {
-                return requiredAfrikaansError
-            }
-        }
-
-        if(!checkedRadioBtn && name === ''){
-            return 'plaese select a language'
-        }
-
-    }
-
-
-    // function radioBtnNotChecked(name, language){
-    //     var checkedRadioBtn = document.querySelector("input[name ='userLanguage']:checked");
-    //     if(!checkedRadioBtn && name === '' || name === undefined){
-    //         return "please fill in your name and select a language"
-    //     }
-    // }
+    var userName = putNameElem.value;
+    // var userName = userName[0].toUpperCase() + userName.slice(1)
 
     
+if (chooseLanguage && userName) {
+    bulisa.setName(userName);
 
-    return{
-        setName,
-        getName,
-        greetCounter,
-        greetEnteredName,
-        withRadionCheckedValidation,
-        // radioBtnNotChecked
-        storeNames
-    }
+    greetApersonElem.innerHTML =  bulisa.greetEnteredName(userName, chooseLanguage);
+    outputCounterElem.innerHTML =  bulisa.greetCounter();
+    requiredFieldErrorElem.innerHTML = ""
+    emptyRadioErrorElem.innerHTML = ""
+
+} 
+  else if(chooseLanguage && userName === '' || userName === undefined){
+    requiredFieldErrorElem.innerHTML = bulisa.withRadionCheckedValidation(userName, chooseLanguage);
+    greetApersonElem.innerHTML = ""
+    
 }
+
+else {
+    emptyRadioErrorElem.innerHTML = bulisa.validateEmptyForm(userName, chooseLanguage)
+    greetApersonElem.innerHTML = ""
+    requiredFieldErrorElem.innerHTML = ""
+
+}
+
+// outputCounterElem.innerHTML =  bulisa.greetCounter();
+
+
+//set the local storage 
+ let key = bulisa.getName();
+ localStorage.setItem('nameList', JSON.stringify(key))
+
+    clearInput();
+
+    // lettersOnly();
+    // storeNames()
+
+}
+
+function clearInput() { 
+    document.getElementById("myform").reset(); 
+}
+
+// function lettersOnly(input){
+//     var regex = /[^a-z]/gi;
+//     input.value = input.value.replace(regex, "")
+// }
+
+greetButtonElem.addEventListener('click', greetThem);

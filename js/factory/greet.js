@@ -4,11 +4,7 @@ function greet(localData){
     
     function setName(enterYourName){
         enterYourName = enterYourName.toUpperCase()
-
-        if(enterYourName != '' || undefined){
-            enterYourName = enterYourName[0].toUpperCase() + enterYourName.slice(1)
-        }
-
+        
         if(!theName.includes(enterYourName)){
             
             theName.push(enterYourName)

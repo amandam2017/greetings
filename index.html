@@ -18,14 +18,12 @@
                             <div class="display--errors">
                                 <p class="requiredFieldError"></p>
                                 <h5 class="emptyRadioError"></h5>
-            
-            
                             </div>
                             
                             <label>name</label>
-                            <input type="text" name="greetInput" required placeholder="name" class="enteredName" id="inputReset" value="">
+                            <!-- <input type="text" name="greetInput" required placeholder="name" class="enteredName" id="inputReset" value=""> -->
 
-                            <!-- <input type="text" name="greetInput" required placeholder="name" class="enteredName" id="inputReset" value="" onkeypress="lettersOnly(this)"> -->
+                            <input type="text" name="greetInput" required placeholder="name" class="enteredName" id="inputReset" value="" onkeypress="lettersOnly(this)">
                     
                             <div class="languages clearfix">
                                 <h4>Select Language</h4>
@@ -46,7 +44,9 @@
 
                             </div>
                             <button class="button-primary greetButton" type="button" name="greet">Greet Me</button>
-                            <!-- <button class="button-primary clear" type="button" name="reset">RESET</button> -->
+                            <button class="button-primary clear" type="button" name="cleanStorage">RESET</button>
+                            <button class="button-primary view" type="button" name="viewLocalStorage" onclick="viewStorage()">VIEW STORAGE</button>
+                            <span id="showStorage"></span>
 
                         </form>
                         <div>

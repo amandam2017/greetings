@@ -34,12 +34,25 @@ span{
 }
 
 /*************required field****************/
-.none{
-    /* display: none; */
-}
 
 .requiredFieldError,
 .emptyRadioError{
     color: #ff0000;
 }
+
+@media (max-width: 768px) {
+    button,
+    input{
+        width: 100%;
+    }
+}
+
+@media (max-width: 450px) {
+    .eachLanguage{
+        float: none;
+        padding: 15px;
+        display: flex;
+    }
+}
+
 

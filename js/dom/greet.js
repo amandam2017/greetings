@@ -12,6 +12,11 @@ const greetApersonElem = document.querySelector('.greetAperson');
 // reference for requiredField
 const requiredFieldErrorElem = document.querySelector('.requiredFieldError');
 const emptyRadioErrorElem = document.querySelector('.emptyRadioError');
+// reference of the clear button
+const resetBtn = document.querySelector('.clear');
+// view local storage
+const viewBtn = document.querySelector('.view');
+
 
 var greetedNames = []
 
@@ -41,8 +46,9 @@ function greetThem() {
     }
 
     var userName = putNameElem.value;
-    // var userName = userName[0].toUpperCase() + userName.slice(1)
-
+    if(userName != ''){
+    userName = userName[0].toUpperCase() + userName.slice(1)
+    }
     
 if (chooseLanguage && userName) {
     bulisa.setName(userName);
@@ -66,29 +72,47 @@ else {
 
 }
 
-// outputCounterElem.innerHTML =  bulisa.greetCounter();
-
-
 //set the local storage 
  let key = bulisa.getName();
  localStorage.setItem('nameList', JSON.stringify(key))
 
     clearInput();
 
-    // lettersOnly();
+    lettersOnly();
     // storeNames()
 
 }
 
 function clearInput() { 
+  
+  
     document.getElementById("myform").reset(); 
 }
 
-// function lettersOnly(input){
-//     var regex = /[^a-z]/gi;
-//     input.value = input.value.replace(regex, "")
-// }
 
+function resetFun(){
+localStorage.clear()
+location.reload()
+}
+
+function viewStorage(){
+    var storageData;
+    document.getElementById("showStorage").innerHTML = "";
+
+    for(storageData = 0; storageData < localStorage.length; storageData++){
+        var storedNames = localStorage.key(storageData)
+        document.getElementById("showStorage").innerHTML += storedNames;
+    }
+}
+
+
+function lettersOnly(input){
+    var restrictLetters = /[^A-Za-z]/;
+    input.value = input.value.replace(restrictLetters, "")
+}
+
+resetBtn.addEventListener('click',resetFun )
+viewBtn.addEventListener('click', viewStorage )
 greetButtonElem.addEventListener('click', greetThem);
 
 
