@@ -83,7 +83,7 @@ else {
     viewStorage()
 
 }
-// set time out
+// set time out for errors
 
 function clearInput() {  
     document.getElementById("myform").reset(); 
