@@ -77,7 +77,6 @@ function greetThem() {
     clearInput();
 
     // lettersOnly();
-    // storeNames()
     setTimeout(function(){
         emptyRadioErrorElem.innerHTML = ""
         requiredFieldErrorElem.innerHTML = ""
@@ -104,7 +103,7 @@ function viewStorage() {
 
     for (var i = 0; i < storageData.length; i++) {
         console.log('This is me: ' + storageData[i]);
-        document.getElementById("showStorage").innerHTML += storageData[i]
+        document.getElementById("showStorage").innerHTML += storageData[i] + ', '
         //Do something
     }
 }
