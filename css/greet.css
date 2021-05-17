@@ -3,16 +3,17 @@
 } */
 
 .form_container{
-    border: 2px solid grey;
+    border: 2px solid #152069;
     padding: 20px;
 }
 
 .form{
-   border: 1px solid #5a5353; 
+   border: 1px solid #152069; 
+   color: #152069;
 }
 
 .form .enteredName{
-    border:1px solid grey;
+    border:3px solid #152069;
     padding: 15px;
 }
 
@@ -29,7 +30,7 @@
   }
 
 span{
-    color:green;
+    color:#152069;
     font-size: 30px;
 }
 
@@ -41,10 +42,35 @@ span{
     font-size:17px;
 }
 
+h2{
+    font-size: 3rem;
+    font-weight: 600;
+    /* text-align: center; */
+    background: #152069;
+    color: #fff;
+    margin: 0;
+    padding: 15px 0;
+}
+.button{
+    background: #152069;
+    color: #fff;
+    border: 2px solid #152069;
+}
+
+.button:hover{
+    border: 2px solid #152069;
+    color: #152069;
+    background-color: #fff;
+}
+
 @media (max-width: 768px) {
     button,
     input{
         width: 100%;
+    }
+
+    h2{
+        font-size: 2rem;
     }
 }
 
@@ -53,6 +79,7 @@ span{
         float: none;
         padding: 15px;
         display: flex;
+        color: #152069;
     }
 }
 

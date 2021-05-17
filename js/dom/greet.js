@@ -48,7 +48,7 @@ function greetThem() {
 
     var userName = putNameElem.value;
     if(userName != ''){
-    userName = userName[0].toUpperCase() + userName.slice(1)
+        userName = userName[0].toUpperCase() + userName.slice(1)
     }
     
 if (chooseLanguage && userName) {
@@ -79,10 +79,11 @@ else {
 
     clearInput();
 
-    // lettersOnly();
-    // storeNames()
+    lettersOnly();
+    viewStorage()
 
 }
+// set time out
 
 function clearInput() {  
     document.getElementById("myform").reset(); 
@@ -94,32 +95,23 @@ localStorage.clear()
 location.reload()
 }
 
+function lettersOnly(input){
+    var pattern = /[^a-z]/;
+    input.value = input.value.replace(pattern, "")
+}
+
 function viewStorage(storageData){
     console.log(storageData)
     var storageData;
     document.getElementById("showStorage").innerHTML = "";
 
     for(storageData = 0; storageData < localStorage.length; storageData++){
-        var storedNames = localStorage.key(storageData)
+        var storedNames = localStorage(storageData)
         document.getElementById("showStorage").innerHTML += storedNames;
     }
 }
 
 
-// function lettersOnly(input){
-//     var pattern = /^[A-Za-z]+$/;
-//     var noLetterError = 'letters only'
-//     if(patternn.test(value) = input.value.replace(pattern, "")){
-//         return true
-//     }else{
-//         alert(noLetterError)
-//         return false;
-//     }
-// }
-
 resetBtn.addEventListener('click',resetFun )
 viewBtn.addEventListener('click', viewStorage )
 greetButtonElem.addEventListener('click', greetThem);
-
-
-

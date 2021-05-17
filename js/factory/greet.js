@@ -20,13 +20,13 @@ function greet(localData){
         return theName.length;   
     }
 
-    var pattern = /^[A-Za-z]+$/;
-    var noLetterError = 'letters only'
+    // var pattern = /^[A-Za-z]+$/;
+    // var noLetterError = 'letters only'
      
     // greet a person
     function greetEnteredName(name,language){
         var greetMe = [];
-        if(pattern.test(name)){
+        // if(pattern.test(name)){
 
         
 
@@ -44,11 +44,11 @@ function greet(localData){
 
             return greetMe
 
-        }
+        // }
         
-        else{
-            return noLetterError
-        }
+        // else{
+        //     return noLetterError
+        // }
             
 
     }
