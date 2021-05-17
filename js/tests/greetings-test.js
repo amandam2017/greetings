@@ -7,7 +7,7 @@ describe("This instance is testing greet function....when greeting a person in a
         assert.equal('YOLIE', bulisa.getName());
         
     });
-    it('should greet Amanda in isiXhosa, the selected language and increament the counter' , function(){
+    it('should greet Amanda in isiXhosa, the selected language and increment the counter' , function(){
 
         const bulisa = greet()
         var name = 'Amanda' 
@@ -17,7 +17,7 @@ describe("This instance is testing greet function....when greeting a person in a
         
     });
 
-    it('should greet Xolie with a selected language which is Afrikaans and increament the counter' , function(){
+    it('should greet Xolie with a selected language which is Afrikaans and increment the counter' , function(){
 
         const bulisa = greet()
         var name = 'Xolie' 
@@ -27,7 +27,7 @@ describe("This instance is testing greet function....when greeting a person in a
         
     });
 
-    it('should show that counter does not increament if a person is greeted more than one time' , function(){
+    it('should show that counter does not increment if a person is greeted more than one time' , function(){
 
         const bulisa = greet()
         bulisa.setName('lol')
@@ -39,7 +39,7 @@ describe("This instance is testing greet function....when greeting a person in a
     });
 
 
-    it('should increament the counter if three different users are greeted' , function(){
+    it('should increment the counter if three different users are greeted' , function(){
 
         const bulisa = greet()
         bulisa.setName('Mishy')
@@ -50,7 +50,7 @@ describe("This instance is testing greet function....when greeting a person in a
         
     });
 
-    it('should increament the counter if three different names are greeted and should continue with the local storage counter on page reload. Before the page loads 3 people were greeted and 3 more are greeted after the page/browser reload and now there are 6 greeted people' , function(){
+    it('should increment the counter if three different names are greeted and should continue with the local storage counter on page reload. Before the page loads 3 people were greeted and 3 more are greeted after the page/browser reload and now there are 6 greeted people' , function(){
 
         const bulisa = greet()
         bulisa.setName('busie')
