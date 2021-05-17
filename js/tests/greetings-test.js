@@ -10,7 +10,7 @@ describe("This instance is testing greet function....when greeting a person in a
     it('should greet Amanda in isiXhosa, the selected language and increament the counter' , function(){
 
         const bulisa = greet()
-        const name = 'Amanda' 
+        var name = 'Amanda' 
 
         bulisa.setName('molo, ' + name)     
         assert.equal('MOLO, AMANDA', bulisa.getName());
@@ -20,7 +20,7 @@ describe("This instance is testing greet function....when greeting a person in a
     it('should greet Xolie with a selected language which is Afrikaans and increament the counter' , function(){
 
         const bulisa = greet()
-        const name = 'Xolie' 
+        var name = 'Xolie' 
 
         bulisa.setName('hallo, ' + name)     
         assert.equal('HALLO, XOLIE', bulisa.getName());
@@ -30,7 +30,7 @@ describe("This instance is testing greet function....when greeting a person in a
     it('should greet Xolie with a selected language but the counter will not increament' , function(){
 
         const bulisa = greet()
-        const name = 'XOLIE' 
+        var name = 'XOLIE' 
 
         bulisa.setName('hallo, ' + name)     
         assert.equal('HALLO, XOLIE', bulisa.getName());
@@ -68,17 +68,17 @@ describe("This instance is testing greet function....when greeting a person in a
     it('should display error messages saysing "plaese enter a name and select a language if no name entered and no language selected"' , function(){
 
         const bulisa = greet()
-        const userName = ''
+        var userName = ''
 
         bulisa.setName(userName);
         
         assert.equal('', bulisa.getName())        
     });
 
-    it('should display error messages saysing "faka igama lakho" when isiXhosa radio button has been selected and no name entered' , function(){
+    it('should display error messages saying "*faka igama lakho*" when isiXhosa radio button has been selected and no name entered' , function(){
 
         const bulisa = greet()
-        var requiredXhosaError = 'faka igama lakho'
+        var requiredXhosaError = '*faka igama lakho*'
 
         bulisa.withRadionCheckedValidation('')
         
@@ -86,12 +86,12 @@ describe("This instance is testing greet function....when greeting a person in a
                
     });
 
-     it('should not take a variable type if its not a string and not letters(A-Za-z)' , function(){
+     it('should not allow a user to enter a variable type if its not a string and not letters(A-Za-z)' , function(){
 
         const bulisa = greet()
-        bulisa.setName('2588698')
+        bulisa.setName('')
 
-        assert.equal(!'2588698', bulisa.getName())
+        assert.equal('', bulisa.getName())
    
     });
 
@@ -99,10 +99,10 @@ describe("This instance is testing greet function....when greeting a person in a
         const bulisa = greet();
         var noSelection = "*Please enter a name and select a language*"
 
-        bulisa.withRadionCheckedValidation('');
+        bulisa.validateNoLangAndName('');
 
-        assert.equal(noSelection, bulisa.withRadionCheckedValidation())
-    });
+        assert.equal(noSelection, bulisa.validateNoLangAndName())
+    });    
 
     it('should display error messages saying *please enter your name* if a user clicked greet button without entering a name and the user selected englsh on the radio button' , function(){
 

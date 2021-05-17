@@ -23,10 +23,12 @@
                             </div>
                             
                             <label>name</label>
-                            <!-- <input type="text" name="greetInput" required placeholder="name" class="enteredName" id="inputReset" value="" onkeypress= "return (event.charCode > 64 && 
-                            event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)"> -->
+                            <input type="text" name="greetInput" required placeholder="name" class="enteredName" id="inputReset" value="" onkeypress= "return (event.charCode > 64 && 
+                            event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)">
+                            <label class="outputCounter">0</label>
 
-                            <input type="text" name="greetInput" required placeholder="name" class="enteredName" id="inputReset" value="" onkeypress="lettersOnly(this)">
+
+                            <!-- <input type="text" name="greetInput" required placeholder="name" class="enteredName" id="inputReset" value="" onkeypress="lettersOnly(this)"> -->
                     
                             <div class="languages clearfix">
                                 <h4>Select Language</h4>
@@ -42,9 +44,6 @@
                                     <label>Afrkaans</label>
                                     <input type="radio" class="selectLang" required name="userLanguage" value="Afrikaans">
                                 </div>
-
-                                <span class="outputCounter">0</span>
-
                             </div>
                             <button class="button greetButton" type="button" name="greet">Greet Me</button>
                             <button class="button clear" type="button" name="cleanStorage">RESET</button>

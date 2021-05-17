@@ -63,6 +63,13 @@ h2{
     background-color: #fff;
 }
 
+.outputCounter{
+    font-size: 30px;
+    float: right;
+}
+
+/**********media queries*************/
+
 @media (max-width: 768px) {
     button,
     input{
@@ -80,6 +87,11 @@ h2{
         padding: 15px;
         display: flex;
         color: #152069;
+    }
+
+    .outputCounter{
+        /* font-size: 30px; */
+        float: none;
     }
 }
 

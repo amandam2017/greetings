@@ -101,6 +101,30 @@ function greet(localData){
 
     }
 
+    function validateNoLangAndName(name, language){
+        // console.log(name)
+            
+            // var noName = "*please enter your name*"
+            // var noLanguage = "*Please select a language*"
+            var noSelection = "*please enter your name and select a language*"
+
+            if (name === '' || name === undefined && language === '') {
+                return noSelection
+            }
+
+            // else if (language === '' && name !== '' || name !== undefined) {
+            //     return noLanguage
+            // }
+
+            // else if (language !== '' && name === '' || name === undefined) {
+            //     return noName
+            // }
+            else{
+                return ''
+            }
+
+    }
+
 
     return{
         setName,
@@ -108,6 +132,8 @@ function greet(localData){
         greetCounter,
         greetEnteredName,
         withRadionCheckedValidation,
-        validateEmptyForm
+        validateEmptyForm,
+        // adding these for testing more errors
+        validateNoLangAndName
     }
 }
