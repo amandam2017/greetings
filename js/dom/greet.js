@@ -85,8 +85,6 @@ function greetThem() {
 }
 
 function clearInput() {
-
-
     document.getElementById("myform").reset();
 }
 

@@ -91,10 +91,20 @@ describe("This instance is testing greet function....when greeting a person in a
         const bulisa = greet()
         var noName = "*please enter your name*"
 
-        bulisa.validateEmptyForm('');
+        bulisa.getName('');
         
         assert.equal(noName, bulisa.validateEmptyForm())        
     });
+
+    // it('should display error messages saying *please enter your name* if a user selected a language and clicked greet button without entering a name' , function(){
+
+    //     const bulisa = greet()
+    //     var noSelection = "*please enter your name and select a language*"
+
+    //     bulisa.greetEnteredName('');
+        
+    //     assert.equal(noSelection, bulisa.validateNoLangAndName())        
+    // });
 
 })
 
