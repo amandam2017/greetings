@@ -15,6 +15,7 @@ const emptyRadioErrorElem = document.querySelector('.emptyRadioError');
 // reference of the clear button
 const resetBtn = document.querySelector('.clear');
 // view local storage
+const outputStorage = document.getElementById('showStorage');
 const viewBtn = document.querySelector('.view');
 
 
@@ -75,11 +76,14 @@ function greetThem() {
     localStorage.setItem('nameList', JSON.stringify(key))
 
     clearInput();
+    // lettersOnly()
 
     // lettersOnly();
     setTimeout(function(){
         emptyRadioErrorElem.innerHTML = ""
         requiredFieldErrorElem.innerHTML = ""
+        outputStorage.innerHTML = ""
+
     }, 5000)
 
 }
@@ -104,12 +108,20 @@ function viewStorage() {
         document.getElementById("showStorage").innerHTML += storageData[i] + ', '
         //Do something
     }
+    
+
+    setTimeout(function(){
+        emptyRadioErrorElem.innerHTML = ""
+        requiredFieldErrorElem.innerHTML = ""
+        outputStorage.innerHTML = ""
+
+    }, 2500)
 }
 
 
 // function lettersOnly(input){
-//     var restrictLetters = /[^A-Za-z]/;
-//     input.value = input.value.replace(restrictLetters, "")
+//     var restrictLetters = /^[a-zA-Z]+$/;
+//     input.value = input.value.match(restrictLetters)
 // }
 
 resetBtn.addEventListener('click', resetFun)
